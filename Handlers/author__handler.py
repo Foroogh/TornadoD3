@@ -35,7 +35,6 @@ class AuthorEditHandler(tornado.web.RequestHandler):
     def post(self, *args):
         aut_id = args[0]
         aut_info = Author.select().where(Author.id == aut_id).get()
-
         aut_info.fn = self.get_argument("author-forename")
         aut_info.ln = self.get_argument("author-surname")
         aut_info.save()

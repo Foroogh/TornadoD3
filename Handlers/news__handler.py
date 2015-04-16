@@ -1,3 +1,4 @@
+from os import abort
 import tornado
 import peewee
 from models import *
@@ -22,13 +23,17 @@ class NewsNewHandler(tornado.web.RequestHandler):
         news_body = self.get_argument("news-body")
         news_date = self.get_argument("news-date")
         news_title = self.get_argument("news-title")
-        news_info = News.create(
-            author=news_author_id,
-            category=news_category_id,
-            body=news_body,
-            title=news_title,
-            date=news_date
-        )
+        try:
+         #   assert isinstance(news_body, object)
+            news_info = News.create(
+                author=news_author_id,
+                category=news_category_id,
+                body=news_body,
+                title=news_title,
+                date=news_date
+            )
+        except:
+            abort(404)
         self.redirect("/news")
 
 
