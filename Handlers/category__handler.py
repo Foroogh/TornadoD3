@@ -33,6 +33,7 @@ class CategoryEditHandler(tornado.web.RequestHandler):
 class CategoryDeleteHandler(tornado.web.RequestHandler):
      def get(self, *args):
        cat_id=args[0]
+       News.delete().where(News.category == cat_id).execute()
        catInfo = Category.select().where(Category.id == cat_id).get().delete_instance()
        self.redirect("/category")
 
