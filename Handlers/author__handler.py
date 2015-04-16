@@ -46,4 +46,5 @@ class AuthorDeleteHandler(tornado.web.RequestHandler):
     def get(self, *args):
         aut_id = args[0]
         aut_info = Author.select().where(Author.id == aut_id).get().delete_instance()
+      #  News.select().where(News.author == aut_id).get().delete_instance()
         self.redirect("/author")
