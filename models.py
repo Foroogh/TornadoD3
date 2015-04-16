@@ -21,7 +21,7 @@ class Author (MySQLModel):
 
 
 class News(MySQLModel):
-    id = peewee.IntegerField()
+    id = peewee.PrimaryKeyField()
     title = peewee.CharField()
     body = peewee.CharField()
     date = peewee.CharField()

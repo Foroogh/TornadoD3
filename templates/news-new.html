@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head><title>Poem Maker Pro</title>
+<link href='{{ static_url("css/bootstrap.css") }}' rel="stylesheet">
+<link href='{{ static_url("css/bootstrap-theme.css") }}' rel="stylesheet">
+    <link href='{{ static_url("css/basic.css") }}' rel="stylesheet">
+
+</head>
+<body style="direction:rtl">
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 ">
+        <h3 class="Yekan" style="color:#2233dd"> اخبار: </h3>
+          <form method="post" action="/news/new">
+<!--
+          <div class="form-group">
+            <label for="news-news-forename" class="control-label Mitra" > نام نویسنده: </label>
+            <input type="text" name="news-author-forename" id="news-author-forename" value="" placeholder="نام نویسنده را وارد کنید !"      class="form-control" />
+
+          </div>
+
+          <div class="form-group">
+            <label for="news-author-surname" class="control-label Mitra" > نام خانوادگی نویسنده: </label>
+            <input type="text" name="news-author-surname" id="news-author-surname" value="" placeholder="نام خانوادگی نویسنده را وارد کنید !"      class="form-control" />
+          </div>
+-->
+          <div class="form-group">
+            <label for="news-author-id" class="control-label Mitra" > شناسه نویسنده: </label>
+            <input type="text" name="news-author-id" id="news-author-id" class="form-control" />
+          </div>
+<!--
+          <div class="form-group">
+            <label for="news-category" class="control-label Mitra" >نام گروه :</label>
+            <input type="text" name="news-category" id="news-category" value="" placeholder="نام گروه را وارد کنید !"      class="form-control" />
+          </div>
+-->
+          <div class="form-group">
+            <label for="news-category-id" class="control-label Mitra" > شناسه گروه: </label>
+            <input type="text" name="news-category-id" id="news-category-id" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-title" class="control-label Mitra" > موضوع خبر: </label>
+            <input type="text" name="news-title" id="news-title" value="" placeholder="موضوع خبر"      class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-date" class="control-label Mitra" > تاریخ: </label>
+            <input type="text" name="news-date" id="news-date" value="" placeholder="تاریخ"      class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-body" class="control-label Mitra" > متن خبر: </label>
+            <input type="text" name="news-body" id="news-body" value="" placeholder="متن خبر"      class="form-control" />
+          </div>
+
+        <input type="submit" class="btn btn-primary Yekan" value="ذخیره تغییرات" >
+          </form>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal"  role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+         <form method="post" action="/news">
+      <div class="modal-header">
+        <button id="editBtn" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title Yekan" id="myModalLabel"> ویرایش اخبار: </h4>
+      </div>
+      <div class="modal-body">
+
+       <!--   <div class="form-group">
+            <label for="news-author-forename" class="control-label Mitra" > نام نویسنده: </label>
+            <input type="text" name="news-author-forename" id="news-author-forename" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-author-surname" class="control-label Mitra" > نام خانوادگی نویسنده: </label>
+            <input type="text" name="news-author-surname" id="news-author-surname" class="form-control" />
+          </div>
+-->
+
+          <div class="form-group">
+            <label for="news-author-id" class="control-label Mitra" > شناسه نویسنده: </label>
+            <input type="text" name="news-author-id" id="news-author-id" class="form-control" />
+          </div>
+<!--
+          <div class="form-group">
+            <label for="news-category" class="control-label Mitra" >نام گروه :</label>
+            <input type="text" name="news-category" id="news-category" class="form-control" />
+          </div>
+-->
+          <div class="form-group">
+            <label for="news-category-id" class="control-label Mitra" > شناسه گروه: </label>
+            <input type="text" name="news-category-id" id="news-category-id" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-title" class="control-label Mitra" > موضوع خبر: </label>
+            <input type="text" name="news-title" id="news-title" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-date" class="control-label Mitra" > تاریخ: </label>
+            <input type="text" name="news-date" id="news-date" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="news-body" class="control-label Mitra" > متن خبر: </label>
+            <input type="text" name="news-body" id="news-body" class="form-control" />
+          </div>
+
+        <input type="hidden" name="author-id" id="author-id" class="form-control" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default Yekan" data-dismiss="modal">بستن </button>
+        <input type="submit" class="btn btn-primary Yekan" value="ذخیره تغییرات" >
+      </div>
+
+              </form>
+    </div>
+  </div>
+</div>
+<script src="{{static_url('js/jquery.js')}}"></script>
+<script src="{{static_url('js/bootstrap.js')}}"></script>
+
+</body>
+</html>
