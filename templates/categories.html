@@ -15,8 +15,11 @@
         <a class="btn btn-lg btn-success Mitra pull-left" href="/category/new">ایجاد گروه جدید</a>
         <br/>      <br/>      <br/>
         <table class="table table-striped">
+        <td class="Mitra"> شناسه </td>
+        <td class="Mitra"> موضوع </td>
        {% for category  in categories %}
         <tr class="Mitra">
+
         <td>{{category.id}} </td>
 
         <td>{{category.name}}</td>

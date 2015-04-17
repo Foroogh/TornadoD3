@@ -14,7 +14,11 @@
         <h3 class="Yekan" style="color:#2233dd"> نویسندگان: </h3>
         <a class="btn btn-lg btn-success Mitra pull-left" href="/author/new">ایجاد نویسنده جدید</a>
         <br/>      <br/>      <br/>
+
         <table class="table table-striped">
+            <td class="Mitra"> شناسه </td>
+        <td class="Mitra"> نام نویسنده </td>
+        <td class="Mitra"> نام خانوادگی نویسنده </td>
        {% for author  in authors %}
         <tr class="Mitra">
         <td>{{author.id}} </td>

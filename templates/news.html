@@ -15,20 +15,27 @@
         <a class="btn btn-lg btn-success Mitra pull-left" href="/news/new"> ایجاد خبر جدید </a>
         <br/>      <br/>      <br/>
         <table class="table table-striped">
-       {% for news  in allnews %}
-        <tr class="Mitra">
-        <td>{{news.id}} </td>
 
-        <td>{{news.category.name}}</td>
-        <td>{{news.title}}</td>
+            <td class="Mitra"> شناسه </td>
+            <td class="Mitra">  گروه </td>
+            <td class="Mitra"> موضوع </td>
+            <td class="Mitra"> نام نویسنده </td>
+            <td class="Mitra"> نام خانوادگی نویسنده </td>
+            <td class="Mitra"> متن خبر </td>
+           {% for news  in allnews %}
+            <tr class="Mitra">
+            <td>{{news.id}} </td>
 
-        <td>{{news.author.fn}}</td>
-        <td>{{news.author.ln}}</td>
+            <td>{{news.category.name}}</td>
+            <td>{{news.title}}</td>
 
-        <td>{{news.body}}</td>
+            <td>{{news.author.fn}}</td>
+            <td>{{news.author.ln}}</td>
 
-        <td> <a class="btn" href="/news/edit/{{news.id}}" /> <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; ویرایش </button></td>
-        <td> <a class="btn" href="/news/delete/{{news.id}}" /> <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; حذف </button></td>
+            <td>{{news.body}}</td>
+
+            <td> <a class="btn" href="/news/edit/{{news.id}}" /> <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; ویرایش </button></td>
+            <td> <a class="btn" href="/news/delete/{{news.id}}" /> <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; حذف </button></td>
         </tr>
        {% end %}
        </table>
